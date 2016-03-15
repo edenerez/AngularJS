@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+    
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <script language="javascript" type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script language="javascript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    
+    
+</head>
+<body>
+
+http://www.objectpartners.com/2013/08/21/using-services-and-messages-to-share-data-between-controllers-in-angularjs/
+
+    <div ng-app="appApp">
+      <div class="wrap" >
+        <h1>Hello there!</h1>
+         
+           <div data-ng-controller="TopController">
+               Top Value: <input data-ng-model="topValue" /><br/>
+               Middle Value: {{middleValue}}<br/>
+               Bottom Value: {{bottomValue}}
+            </div>
+            <div data-ng-controller="MiddleController">
+               Top Value: {{topValue}}<br/>
+               Middle Value: <input data-ng-model="middleValue" /><br/>
+               Bottom Value: {{bottomValue}}
+            </div>
+            <div data-ng-controller="BottomController">
+               Top Value: {{topValue}}<br/>
+               Middle Value: {{middleValue}}<br/>
+               Bottom Value: <input data-ng-model="bottomValue" /><br/>
+            </div>
+    
+    </div>
+    <script src="Controllers/appApp.js" type="text/javascript"></script>
+    <script src="Controllers/cntrlController.js" type="text/javascript"></script>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-animate.min.js"></script>
+
+    <!-- loadingbar -->
+    <script src="loading-bar.js"></script>
+    <link href='loading-bar.css' rel='stylesheet' />
+
+    <!-- example app -->
+    <script src="app.js"></script>
+    
+  </head>
+
+  <body ng-app="LoadingBarExample" ng-controller="ExampleCtrl">
+    <div>
+      <h1>Angular Loading Bar</h1>
+      <p>An automatic loading bar using angular interceptors.<small>  It works automatically, so simply include it as a dependency and it will automatically display the progress of your $http requests.</small></p>
+     
+    </div>
+
+    <div  ng-hide="fakeIntro">
+      <!-- <h4>Examples:</h4> -->
+      <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-primary btn-lg" ng-click="start()">
+          <i class="glyphicon glyphicon-play-circle"></i> <span>cfpLoadingBar.</span>start()
+        </a>
+        <a href="#" class="btn btn-primary btn-lg" ng-click="complete()">
+          <i class="glyphicon glyphicon-play-circle"></i> <span>cfpLoadingBar.</span>complete()
+        </a>
+        <a href="#" class="btn btn-primary btn-lg" ng-click="fetch()"><i class="glyphicon glyphicon-play-circle"></i> Real Example <span> (from reddit)</span></a>
+      </div>
+    </div>
+
+   
+
+  </body>
+</html>

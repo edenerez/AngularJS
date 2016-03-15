@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+</head>
+<body>
+
+    <link href="dependencies/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+
+    <script type='text/javascript' src="dependencies/js/modernizr.js"></script>
+    <!-- https://github.com/seiyria/bootstrap-slider -->
+    <div style="margin:30px;">
+        <input id="ex15" type="text" data-slider-min="10" data-slider-max="90" data-slider-step="5" />
+
+    </div>
+    
+
+    <script type='text/javascript' src="dependencies/js/jquery.min.js"></script>
+    <script type='text/javascript' src="js/bootstrap-slider.js"></script>
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            alert("ex15");
+			/* Example 15 */
+			$("#ex15").slider({
+				min: 10,
+				max: 90,
+				scale: 'logarithmic',
+				step: 1
+			});
+		});
+    </script>
+</body>
+</html>

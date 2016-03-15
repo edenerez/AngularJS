@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+    
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <script language="javascript" type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script language="javascript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    
+    
+</head>
+<body>
+
+http://www.ng-newsletter.com/posts/beginner2expert-services.html
+
+    <div ng-app="appApp" ng-controller="cntrlController">
+      <div class="wrap" >
+        <h1>Hello there!</h1>
+         
+            <div >
+              <label for="username">Type in a GitHub username</label>
+              <input type="text" ng-model="username" placeholder="Enter a GitHub username, like auser" />
+              <pre ng-show="username">{{ events }}</pre>
+            </div>
+    
+    </div>
+    <script src="Controllers/appApp.js" type="text/javascript"></script>
+    <script src="Controllers/cntrlController.js" type="text/javascript"></script>
+    
+</div>
+</body>
+</html>

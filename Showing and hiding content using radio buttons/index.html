@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+    
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <script language="javascript" type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script language="javascript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    
+    
+</head>
+<body>
+
+http://codepen.io/anon/pen/vEZRvg
+
+http://angular-ui.github.io/bootstrap/#/tabs
+
+http://odetocode.com/blogs/scott/archive/2013/06/25/radio-buttons-with-angularjs.aspx
+http://odetocode.com/blogs/scott/archive/2013/06/19/using-ngoptions-in-angularjs.asp
+
+    <div ng-app="appApp" ng-controller="cntrlController" ng-init="">
+      <div class="wrap" >
+        <h1>Hello there!</h1>
+        <p>Push the radio buttons to change the content!</p>
+        
+          <label for="first">Show first content 1 </label>
+          <input id="first"  type="radio" name="content2" ng-model="selectRadio" value="first"/>
+          <br />
+          <label for="other">Show other content 2</label>
+          <input id="other" type="radio" name="content2" ng-model="selectRadio" value="other"/>
+       
+    
+        <div class="wrapper">
+          <p ng-show="selectRadio == 'first'">This is the first content! bla1</p>
+          <h2 ng-show="selectRadio == 'other'">This is the other content! blas2</h2>
+        </div>
+        {{ selectRadio }}
+    </div>
+    <script src="Controllers/appApp.js" type="text/javascript"></script>
+    <script src="Controllers/cntrlController.js" type="text/javascript"></script>
+    
+</div>
+</body>
+</html>

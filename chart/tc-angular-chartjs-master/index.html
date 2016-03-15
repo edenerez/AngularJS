@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+    <link href="demo/css/app.css" rel="stylesheet" />
+    <link href="demo/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="demo/css/foundation.min.css" rel="stylesheet" />
+    <link href="demo/css/normalize.css" rel="stylesheet" />
+    <link href="demo/css/prism.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-ng-app="app">
+        <div class="row" ng-controller="LineCtrl" style="margin-top:20px;">
+            <div class="large-12 columns">
+                <h1>Unmasking chart</h1>
+                <hr>
+            </div>
+            <div class="medium-8 columns">
+                <canvas tc-chartjs-line chart-options="chart_options" chart-data="chart_data" chart-legend="lineChart1"></canvas>
+            </div>
+            <div class="medium-4 columns">
+                <div tc-chartjs-legend chart-legend="lineChart1"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="demo/js/vendor/angular.js"></script>
+    <script src="demo/js/vendor/Chart.js"></script>
+    <script src="demo/js/vendor/fastclick.js"></script>
+    <script src="demo/js/vendor/foundation.min.js"></script>
+    <script src="demo/js/vendor/jquery.js"></script>
+    <script src="demo/js/vendor/prism.js"></script>
+
+    <script src="src/tc-angular-chartjs.js"></script>
+
+    <script src="demo/js/app.js"></script>
+    <script src="demo/js/bar.js"></script>
+    <script src="demo/js/doughnut.js"></script>
+    <script src="demo/js/line.js"></script>
+    <script src="demo/js/pie.js"></script>
+    <script src="demo/js/polararea.js"></script>
+    <script src="demo/js/radar.js"></script>
+    <script>
+  $(document).foundation();
+    </script>
+</body>
+</html>

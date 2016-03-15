@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>IntegralUI Studio for Web v2.1 - Release Notes</title>
+    <style type="text/css">
+        body
+        {
+            font-family: Calibri;
+            font-size: 1em;
+        }
+        h1
+        {
+            font-size: 2.4em;
+        }
+        h2
+        {
+            font-size: 1.8em;
+        }
+        h3
+        {
+            font-size: 1.2em;
+        }
+        ul li
+        {
+	        padding: 2px 0;
+        }
+        .footer
+        {
+            font-size: 0.75em;
+        }
+        hr
+        {
+            background-color: #c3c3c3;
+            border: thin solid 1px;
+            border-width: 0 0 1px 0;
+            height: 1px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin:30px 0 0 0; text-align: center"><span style="color:#c60d0d">IntegralUI</span> Studio <span style="font-size:0.75em; font-style:italic">for Web</span></h1>
+    <h2 style="margin:0 0 20px 0; text-align: center"><span style="font-size: 0.875em">v2.1</span></h2>
+    <p style="text-align: center"><a href="http://www.lidorsystems.com/products/web/studio/"><img alt="IntegralUI Studio for Web - Screenshot" src="http://www.lidorsystems.com/images/iui-studio-web-v21000.png" /></a></p>
+    <p style="margin-top: 50px;"><strong>IntegralUI Studio for Web</strong> is a suite of advanced AngularJS directives and jQuery widgets. All components have many features like fully customizable appearance, optimized for fast data loading and update, improved drag and drop functionality, animations, support for right-to-left layouts, themes and much more.</p>
+    <h3 style="color: #0000DD;">What's included</h3>
+    <ul>
+        <li><b>Accordion</b> - A list of expandable groups with header and content panel</li>
+        <li><b>CheckBox</b> - Native AngularJS directive which represents a check box</li>
+        <li><b>ComboBox</b> - Native AngularJS directive which represents a combo box</li>
+        <li><b>ContextMenu</b> - Adds a custom context menu to other AngularJS Directives</li>
+        <li><b>Menu</b> - Allows you to easily navigate among pages in your web apps</li>
+        <li><b>SlideBar</b> - Animates slides composed of images or custom content</li>
+        <li><b>TabStrip</b> - Allows you to create tabbed user interface in your web apps</li>
+        <li><b>TreeGrid</b> - A Grid component which shows hierarchical data structures in multiple columns</li>
+        <li><b>TreeView</b> - Fast data loading and update of hierarchical structures</li>
+    </ul>
+    <h3 style="color: #009933;">What's New</h3>
+    <ul>
+        <li>Use of ComboBox directive as an editor in TreeGrid cells, displays drop-down list</li>
+        <li>Filtering:
+            <ul>
+                <li>AngularJS IntegralUIFilter service provides advanced built-in filtering operations</li>
+                <li>Option to create custom filtering operations in your code usign the above service</li>
+                <li>TreeGrid and TreeView components comes with integrated filtering</li>
+                <li>Option to create custom filter templates</li>
+           </ul>
+        </li>
+        <li>Sorting:
+            <ul>
+                <li>TreeGrid and TreeView includes option to apply custom or built-in sorting</li>
+                <li>Sort rows and items in ascending or descending order, or choose none to stop sorting</li>
+                <li>Ability to create your own custom sort operation very easily</li>
+           </ul>
+        </li>
+        <li>Improved overall performance of the TreeGrid</li>
+        <li>Vertical scrolling in TreeGrid is now smooth, tooltip is no longer displayed</li>
+        <li>Option to show/hide TreeGrid columns</li>
+        <li>Option to prevent cells from editing on individual level</li>
+        <li>Option to prevent expanding of rows and items with double-click</li>
+        <li>Pressing ENTER or SPACE key over cells with a check box, now changes its value</li>
+        <li>New properties:
+            <ul>
+                <li>autoExpand, determines whether items or rows becomes expanded during drag drap</li>
+                <li>allowFilter, determines whether filtering will be applied</li>
+                <li>sorting, determines the sort order</li>
+           </ul>
+        </li>
+        <li>New methods:
+            <ul>
+                <li>filter, filters the data in TreeGrid and TreeView using specified filtering parameters</li>
+                <li>findRowByPath, searches for a row based on specified path</li>
+                <li>sort, arranges the data in TreeGrid and TreeView in ascending or descending order</li>
+            </ul>
+        </li>
+        <li>New events:
+            <ul>
+                <li>gotFocus and lostFocus, fired when row, item or label editor receives or loses the input focus</li>
+                <li>click, fired when check box area is clicked</li>
+            </ul>
+        </li>
+        <li><a href="http://www.lidorsystems.com/products/web/studio/features/">and much more ...</a></li>
+    </ul>
+    <h3 style="color: #c60d0d;">What's Fixed:</h3>
+    <ul>
+        <li>Column resize no longer interferes with column hovering</li>
+        <li>Column reorder no longer interferes with column resize</li>
+        <li>During column resize, resize cursor no longer disappears when mouse cursor is outside resize area</li>
+        <li>Drag Drop upwards now scrolls the current view of the TreeGrid</li>
+        <li>Drag Drop of rows over column header and footer is now disabled</li>
+        <li>PageDown, PageUp handlers no longer causes scrolling of window page</li>
+        <li>Mouse-wheel no longer changes hover item when there is no vertical scrollbar</li>
+        <li>TextTrimming under FireFox no longer cuts the cell's text</li>
+        <li>ItemCheckedChanged is no longer fired during expand/collapse of items</li>
+        <li>Misfire of cellValueChanged event during control layout update is now fixed</li>
+        <li>If a context menu is shown for a row or item, pressing the escape key now closes the context menu</li>
+        <li>add/remove events are now properly fired after loadData is called</li>
+        <li>Fixed issue which causes right click on context menu to show the default browser context menu</li>
+        <li>cellClick event now fires when check box is clicked</li>
+        <li>Fixed the issues which causes selection of label editor text to reset the cell value</li>
+        <li>Fixed the issue which caused label editor not to occupy cell space in whole</li>
+        <li>Selecting a part of text in label editor no longer closes the editor</li>
+        <li>Other minor bug fixes</li>
+    </ul>
+    <h3>Content:</h3>
+    <ul>
+        <li>JavaScript files - located in /js directory</li>
+        <li>CSS &amp; Themes - located in /css directory</li>
+        <li>Samples - you can find samples for each widget in /samples directory</li>
+        <li>Documentation - available online, accessible from here: <a href="http://www.lidorsystems.com/support/help/web/introduction/">Online Help</a></li>
+        <li>License &amp; Purchase - for more information about our licensing model and purchase options, please visits us at <a href="http://www.lidorsystems.com/products/web/studio/pricing.aspx">License &amp; Purchase</a></li>
+        <li>Other files - resources can found in /resources directory and jquery files are located at /external directory</li>
+    </ul>
+    <p style="margin-top:20px">For more information you can visit us on: </span><a href="http://www.lidorsystems.com/products/web/studio/">IntegralUI Studio home page</a></p>
+    <div class="footer">
+        <hr />
+        <p><a href="http://www.lidorsystems.com">Copyright 2014-2015 Lidor Systems. All rights reserved.</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS UI Tree demo</title>
+    <!-- Stylesheets -->
+    <link data-require="font-awesome@*" data-semver="4.2.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="angular-ui-tree.min.css" />
+     <link rel="stylesheet" href="ngDialog.min.css" />
+     <link rel="stylesheet" href="ngDialog-theme-default.min.css" />
+      <link rel="stylesheet" href="ngDialog-theme-plain.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+<body ng-app="folderApp">
+
+  <div class="container" ng-controller="folderCtrl">
+    
+   
+  
+     
+     <button type="button"
+     class="btn btn-success"
+		ng-dialog="firstDialogId"
+		ng-dialog-controller="InsideCtrl"
+		ng-dialog-data="{{jsonData}}"
+		ng-dialog-class="ngdialog-theme-default"
+		ng-dialog-show-close="true">Open via directive</button>
+		
+		 <button type="button"
+     class="btn btn-success"
+		ng-dialog="secondDialogId"
+		ng-dialog-controller="InsideCtrl"
+		ng-dialog-data="{{treeData}}"
+		ng-dialog-class="ngdialog-theme-default"
+		ng-dialog-show-close="true">Open UI Tree via directive</button>
+		
+		
+		
+		
+		
+		
+    
+    <h1 class="page-header">Folders with checkbox- demo</h1>
+
+    <div >
+      <div class="col-lg-6">
+        <h3>Tree view
+        <hr>
+          <div >
+          <a href="" class="btn btn-default" ng-click="collapseAll()">Collapse all</a>
+          <a href="" class="btn btn-default" ng-click="expandAll()">Expand all</a>
+          <a href="" class="btn btn-warning " ng-click="moveLastToTheBegginig()">Move Last To The Begginig</a>
+          </div>
+          <hr>
+          <div >
+            <a href="" class="btn btn-danger" ng-click="propagateCheckFromParent(data,'checked')">Select all</a>
+            <a href="" class="btn btn-danger" ng-click="propagateCheckFromParent(data,'unchecked')">Unselect all</a>
+            <a href="" class="btn btn-success" ng-click="newParentItem()">New Folder</a>
+          </div>
+          <hr>
+        </h3>
+      </div>
+      <div class="col-lg-6">
+
+        <!-- Nested node templates -->
+         
+        <!-- Template for parent nodes -->
+        <script type="text/ng-template" id="parent_nodes_renderer.html">
+          <div ui-tree-handle class="tree-node tree-node-content">    
+            <i class="fa fa-2x" data-nodrag   ng-class="{'fa-square-o': node.checkStatus==='unchecked', 'fa-check-square-o ': node.checkStatus==='checked', 'fa-minus-square-o': node.checkStatus==='partlyChecked'}" ng-click="toggleCheck(node)" data-nodrag></i>
+            <i class="fa fa-2x" data-nodrag  ng-class="{'fa-caret-square-o-right': collapsed, 'fa-caret-square-o-down': !collapsed}" ng-click="toggle(this)"></i>
+            <i class="fa fa-2x" data-nodrag  ng-class="{'fa-folder': collapsed, 'fa-folder-open': !collapsed}" ng-click="toggle(this)"></i>
+            <span class="textContents"><strong>{{node.title}}</strong></span >
+            <i class="fa fa-times-circle fa-2x pull-right"  data-nodrag  ng-click="remove(this)"></i>
+            <i class="fa fa-plus-square fa-2x pull-right" data-nodrag  ng-click="newSubItem(this)"></i>
+          </div>
+          <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+            <li ng-repeat="node in node.nodes" ui-tree-node  ng-include="(node.nodes) ? 'parent_nodes_renderer.html' :  'terminal_node_renderer.html' ">  </li>
+          </ol>
+        </script>
+        <!-- Template for terminal nodes -->
+        <script type="text/ng-template" id="terminal_node_renderer.html">
+          <div ui-tree-handle class="tree-node tree-node-content">
+            <i class="fa fa-2x"   ng-class="{'fa-square-o': node.checkStatus==='unchecked', 'fa-check-square-o ': node.checkStatus==='checked'}" ng-click="toggleCheck(node)" data-nodrag></i>
+            <span class="textContents"><strong>{{node.title}}</strong></span >
+            <i class="fa fa-times-circle fa-2x pull-right"  data-nodrag  ng-click="remove(this)"></i>
+          </div>
+        </script>
+        <!--The ROot Node-->
+        <div ui-tree id="tree-root" callbacks="treeOptions">
+          <ol ui-tree-nodes="" ng-model="data">
+            <li ng-repeat="node in data" ui-tree-node ng-include="(node.nodes) ? 'parent_nodes_renderer.html' : 'terminal_node_renderer.html' "></li>
+          </ol>
+        </div>
+      </div>
+     
+    </div>
+    
+    
+     <!-- Template for parent nodes For ngDialog -->
+        <script type="text/ng-template" id="parent_nodes_renderer_ngdialog.html">
+         <div ui-tree-handle class="tree-node tree-node-content">    
+            <i class="fa fa-2x" data-nodrag   ng-class="{'fa-square-o': node.checkStatus==='unchecked', 'fa-check-square-o ': node.checkStatus==='checked', 'fa-minus-square-o': node.checkStatus==='partlyChecked'}" ng-click="toggleCheck(node)" data-nodrag></i>
+            <i class="fa fa-2x" data-nodrag  ng-class="{'fa-caret-square-o-right': collapsed, 'fa-caret-square-o-down': !collapsed}" ng-click="toggle(this)"></i>
+            <i class="fa fa-2x" data-nodrag  ng-class="{'fa-folder': collapsed, 'fa-folder-open': !collapsed}" ng-click="toggle(this)"></i>
+            <span class="textContents"><strong>{{node.title}}</strong></span >
+          </div>
+          <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+            <li ng-repeat="node in node.nodes" ui-tree-node  ng-include="(node.nodes) ? 'parent_nodes_renderer.html' :  'terminal_node_renderer.html' ">  </li>
+          </ol>
+        </script>
+        <!-- Template for terminal nodes For ng Dialog -->
+        <script type="text/ng-template" id="terminal_node_renderer_ngdialog.html">
+          <div ui-tree-handle class="tree-node tree-node-content">
+            <i class="fa fa-2x"   ng-class="{'fa-square-o': node.checkStatus==='unchecked', 'fa-check-square-o ': node.checkStatus==='checked'}" ng-click="toggleCheck(node)" data-nodrag></i>
+            <span class="textContents"><strong>{{node.title}}</strong></span >
+          </div>
+        </script>
+    
+    <script type="text/ng-template" id="firstDialogId">
+		<div class="ngdialog-message">
+			<h3>ngDialog template</h3>
+			<p ng-show="theme">Test content for <code>{{theme}}</code></p>
+			<p ng-show="ngDialogData.foo">Data passed through: <code>{{ngDialogData.foo}}</code></p>
+			<p ng-show="dialogModel.message">Scope passed through: <code>{{dialogModel.message}}</code></p>
+		</div>
+		<div class="ngdialog-buttons">
+			<button type="button" class="ngdialog-button ngdialog-button-secondary"
+				ng-dialog="secondDialogId"
+				ng-dialog-class="ngdialog-theme-default"
+				ng-dialog-controller="SecondModalCtrl"
+				ng-dialog-close-previous>Close and open</button>
+			<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="openSecond()">Open next</button>
+		</div>
+	</script>
+	
+	
+	    <script type="text/ng-template" id="secondDialogId">
+		<div class="ngdialog-message">
+			 <div class="col-lg-6">
+        <h3>Tree view
+        <hr>
+          <div >
+          <a href="" class="btn btn-default" ng-click="collapseAll()">Collapse all</a>
+          <a href="" class="btn btn-default" ng-click="expandAll()">Expand all</a>
+         </div>
+          <hr> 
+          <div >
+            <a href="" class="btn btn-danger" ng-click="propagateCheckFromParent(treeData,'checked')">Select all</a>
+            <a href="" class="btn btn-danger" ng-click="propagateCheckFromParent(treeData,'unchecked')">Unselect all</a>
+          </div>
+          <hr>
+        </h3>
+      </div>
+     
+			<!--The ROot Node-->
+        <div ui-tree id="tree-root-dialog" callbacks="treeOptionsDialog">
+          <ol ui-tree-nodes="" ng-model="treeData">
+            <li ng-repeat="node in treeData" ui-tree-node ng-include="(node.nodes) ? 'parent_nodes_renderer_ngdialog.html' : 'terminal_node_renderer_ngdialog.html' "></li>
+          </ol>
+        </div>
+			
+			
+			
+			
+		</div>
+		<div class="ngdialog-buttons">
+			<button type="button" class="ngdialog-button ngdialog-button-secondary"
+				ng-dialog="secondDialogId"
+				ng-dialog-class="ngdialog-theme-default"
+				ng-dialog-controller="SecondModalCtrl"
+				ng-dialog-close-previous>Close and open</button>
+			<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="openSecond()">Open next</button>
+		</div>
+	</script>
+
+
+  </div>
+
+    <!--[if IE 8]>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
+  <![endif]-->
+    <script src="angular.min.js"></script>
+    <script type="text/javascript" src="angular-ui-tree.js"></script>
+    <script type="text/javascript" src="ngDialog.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+-
+      <script data-require="underscore.js@1.5.1" data-semver="1.5.1" src="//cdn.jsdelivr.net/underscorejs/1.5.1/underscore-min.js"></script>
+  </body>
+
+</html>

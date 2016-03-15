@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    
+
+    <script language="javascript" type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script language="javascript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+
+    <script src="myApp.js" type="text/javascript"></script>
+    
+    
+</head>
+<body>
+    http://erikaugust.com/thoughts/ng-bind-html/
+    <br/>
+    http://stackoverflow.com/questions/19415394/with-ng-bind-html-unsafe-removed-how-do-i-inject-html
+
+
+    <div ng-app="myApp" ng-controller="AppController">
+        input: <textarea ng-model="htmlContent"></textarea>
+        ng-bind(not working): <div ng-bind="trustedHtmlContent"></div>
+        ng-bind-html(is working): <div ng-bind-html="trustedHtmlContent"></div>
+    </div>
+   
+</body>
+</html>

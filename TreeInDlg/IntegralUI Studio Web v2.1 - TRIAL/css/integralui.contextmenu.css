@@ -1,0 +1,66 @@
+.iui-contextmenu
+{
+	background-color: #fafafa;
+	border: solid thin #999999;
+	border-radius: 3px;
+	padding: 1px;
+    color: black;
+	cursor: default;
+	position: absolute;
+	font-size: 16px;
+	z-index: 999;
+	
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.iui-contextmenu ul
+{
+	margin: 0;
+	padding: 1px;
+}
+.iui-contextmenu li
+{
+	border: thin solid transparent;
+	border-radius: 3px;
+	color: black;
+	display: block;
+	list-style-type: none;
+	margin: 1px;
+	white-space: nowrap;
+}
+.iui-contextmenu li > span[data-element="header"]
+{
+	display: inline-block;
+	font-weight: bold;
+	padding: 2px;
+	vertical-align: middle;
+}
+.iui-contextmenu li > span[data-element="content"]
+{
+	display: inline-block;
+	padding: 2px 5px 2px 15px;
+	vertical-align: middle;
+}
+.iui-contextmenu li > hr[data-element="separator"]
+{
+	border: 0;
+	border-top: 1px solid #cdcdcd;
+	/*border-bottom: 1px solid #e5e5e5;*/
+	margin: 2px 0;
+}
+.iui-contextmenu-item-hovered
+{
+	background: #a1a1a1;
+	border: thin solid #818181 !important;
+	color: white !important;
+}
+.iui-contextmenu-item-disabled
+{
+	opacity: 0.5;
+	/*pointer-events: none;*/
+}
+
+

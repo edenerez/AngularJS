@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    
+
+    <script language="javascript" type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script language="javascript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+
+    <script src="myApp.js" type="text/javascript"></script>
+    
+    
+</head>
+<body>
+http://stackoverflow.com/questions/14250642/angularjs-how-to-remove-an-item-from-scope
+http://stackoverflow.com/questions/15453979/how-do-i-delete-an-item-or-object-from-an-array-using-ng-click
+http://plnkr.co/edit/ZdShIA?p=preview
+http://codeutopia.net/blog/2014/11/10/angularjs-best-practices-avoid-using-ng-repeats-index/
+http://team.158ltd.com/2014/08/31/adding-and-removing-list-items-with-angularjs/
+http://jsfiddle.net/Cowwando/5dn2mtb8/
+http://jsfiddle.net/5mn13m7r/
+
+<div ng-app="myApp">
+    <ul ng-controller="ItemsController" class="nav">
+        <input type="text" value="ItemName" ng-model="newItemName"
+        placeholder="name of new item...">
+            <button ng-click="addItem()">Add Me</button>
+        <li ng-repeat="item in items.data" id="item{{item.id}}">
+            <input id="{{item.title}}" type="radio"  name="SelectedClassGroup" ng-model="SelectedClass" value="{{item.title}}"/> 
+            <label for="{{item.title}}">{{item.title}}</label> 
+            <a ng-click="deleteItem($index)" class="delete-item">x</a>
+        </li>
+    </ul>
+</div>
+   
+</body>
+</html>
