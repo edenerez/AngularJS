@@ -1,0 +1,17 @@
+﻿<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" ng-repeat="tab in tabs" ng-click="selectTab($index)" ng-class="{'active':selectedTab == $index}">
+        <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">Tab {{tab.id}} <span ng-click="deleteTab($index)" class="glyphicon glyphicon-remove"></span></a>
+    </li>
+    <li role="presentation" ng-click="addTab()">
+        <a aria-controls="home" role="tab" data-toggle="tab">( + )</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="tab">
+        <h1>Tab {{tabs[selectedTab].id}}</h1>
+        <h3>
+            Content:-
+            <tab content="content from html" > </tab>
+        </h3>
+    </div>
+</div>

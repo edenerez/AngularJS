@@ -8,20 +8,89 @@
 
     <link href="dependencies/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-slider.css" rel="stylesheet">
-
+    <style>
+        #Red .slider-selection {
+	            background: #ffe9d2;
+            }
+        #Red .slider-handle {
+	        background: #ffe9d2;
+        }
+        #Green .slider-selection {
+	            background: #e4f4d9;
+            }
+        #Green .slider-handle {
+	        background: #e4f4d9;
+        }
+        #Blue .slider-selection {
+	            background: #8EC3EA;
+            }
+        #Blue .slider-handle {
+	        background: #8EC3EA;
+        }
+    </style>
     <script type='text/javascript' src="dependencies/js/modernizr.js"></script>
     <!-- https://github.com/seiyria/bootstrap-slider -->
     <div style="margin:30px;">
         <input id="ex15" type="text" data-slider-min="10" data-slider-max="90" data-slider-step="5" />
+        </div>
+    <div style="margin:30px;">
+        <input id="ex13" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]' />
 
     </div>
-    
+    <div style="margin:30px;">
+        <input id="ex13b" type="text" data-slider-value="22" data-slider-ticks="[0, 12, 20, 22, 28, 40]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["0", "1.2", "2", "2.2", "2.8", "4"]' />
 
+    </div>
+    <div style="margin:30px;">
+        <input id="ex14" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels="['$0', '$100', '$200', '$300', '$400']" ticks_positions="[0, 30, 60, 70, 90, 100]" />
+
+    </div>
+    <div style="margin:30px;">
+        <input id="ex14b" type="text"  
+               data-slider-min="0" 
+               data-slider-max="4"
+               data-slider-enabled="false"
+               data-slider-precision="2"
+               data-slider-id="Red" 
+               data-slider-value="2.2" 
+               data-slider-ticks="[1.2, 2.2, 2.8]"
+               data-slider-ticks-labels='["1.2", "2.2", "2.8"]'
+               data-slider-ticks-positions="[30, 55, 70]"
+               />
+
+    </div>
+    <div style="margin:30px;">
+        <input id="ex14c" type="text"
+               data-slider-min="0"
+               data-slider-max="4"
+               data-slider-value="2.2"
+               data-slider-id="Green"
+               data-slider-enabled="false"
+               data-slider-ticks="[1.2, 2.2, 2.8]"
+               data-slider-ticks-labels='["1.2", "2.2", "2.8"]'
+               data-slider-ticks-positions="[30, 55, 70]"
+               data-slider-precision="2" />
+
+    </div>
+    <div style="margin:30px;">
+        <input id="ex14d" type="text"
+               data-slider-min="0"
+               data-slider-max="4"
+               data-slider-value="2.2"
+               data-slider-id="Blue"
+               data-slider-enabled="false"
+               data-slider-ticks="[1.2, 2.2, 2.8]"
+               data-slider-ticks-labels='["1.2", "2.2", "2.8"]'
+               data-slider-ticks-positions="[30, 55, 70]"
+               data-slider-precision="2" 
+               data-slider-reversed="true" />
+
+    </div>
     <script type='text/javascript' src="dependencies/js/jquery.min.js"></script>
     <script type='text/javascript' src="js/bootstrap-slider.js"></script>
     <script type='text/javascript'>
         $(document).ready(function () {
-            alert("ex15");
+            //alert("ex15");
 			/* Example 15 */
 			$("#ex15").slider({
 				min: 10,
@@ -29,6 +98,35 @@
 				scale: 'logarithmic',
 				step: 1
 			});
+
+			$("#ex13").slider({
+			    ticks: [0, 100, 200, 300, 400],
+			    ticks_labels: ['$0', '$100', '$200', '$300', '$400'],
+			    ticks_snap_bounds: 30
+			});
+			$("#ex13b").slider({
+			    ticks: [0, 12, 20, 22, 28, 40],
+			    ticks_labels: ['0', '1.2', '2', '2.2', '2.8', '4'],
+			    ticks_snap_bounds: 30
+			});
+			$("#ex14").slider({
+			    ticks: [0, 100, 200, 300, 400],
+			    ticks_positions: [0, 30, 60, 70, 90, 100],
+			    ticks_labels: ['$0', '$100', '$200', '$300', '$400'],
+			    ticks_snap_bounds: 30
+			});
+
+			$("#ex14b").slider({
+			    reversed: true
+			});
+
+			$("#ex14c").slider({
+
+			});
+			$("#ex14d").slider({
+
+			});
+
 		});
     </script>
 </body>

@@ -1,0 +1,19 @@
+﻿[
+  { "value": 1 },
+  {
+    "value": 10,
+    "children": [
+
+      { "value": 4 },
+      {
+        "value": 4,
+        "content": {
+          "type": "my-widget2",
+          "text": "bla"
+          }
+      },
+      { "value": 4 }
+    ]
+  },
+  { "value": 1 } 
+]

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+    <script src="App.js"></script>
+    <script src="Controller.js"></script>
+    <script src="RadioButtonGroup.js"></script>
+    <script src="RadioButtonGroupService.js"></script>
+
+</head>
+<body ng-app="App" ng-controller="cnrl">
+    html page: {{selected}}
+    <br />
+    <radio-button-group name="{{NameOfGroup}}" title="This is a title" selected="value2" items="arrayName"></radio-button-group>
+    <radio-button-group name="{{NameOfGroup2}}" title="This is a title2" selected="val3" items="arrayName2"></radio-button-group>
+
+</body>
+</html>

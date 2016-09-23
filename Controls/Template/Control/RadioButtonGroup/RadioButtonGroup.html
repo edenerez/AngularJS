@@ -1,0 +1,15 @@
+﻿
+<fieldset>
+    selected:  {{selected}}
+    <legend>{{title}}</legend>
+    <div class="radioButtonGroupClass">
+        <div ng-repeat="item in items" class="radioButtonClass">
+            <input id="{{name}}_{{item.id}}" type="radio" name="{{name}}"
+                   ng-click="updateSelected(item ,$index);"
+                   ng-model="selected" value="{{item.value}}" />
+            <label for="{{name}}_{{item.id}}">
+                {{item.label}}
+            </label>
+        </div>
+    </div>
+</fieldset>

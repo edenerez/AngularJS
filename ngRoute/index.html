@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    <script src="App.js"></script>
+    <script src="Controller.js"></script>
+
+
+
+    <link href="Websites/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Websites/css/main.css" rel="stylesheet">
+    <link id="css-preset" href="Websites/css/presets/preset1.css" rel="stylesheet">
+    <link href="Websites/css/responsive.css" rel="stylesheet">
+    
+</head>
+<body ng-app="App" ng-controller="cnrl">
+    <div class="main-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="scroll active"><a href="#home">Home</a></li>
+                        <li class="scroll"><a href="#Websites">Websites</a></li>
+                        <li class="scroll"><a href="#Website">Website</a></li>
+                        <li class="scroll"><a href="#twitter">Service</a></li>
+                        <li class="scroll"><a href="#twitter">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="scroll active"><a href="#home">Add New Project</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div><!--/#main-nav-->
+
+
+    <div ng-view></div>
+
+
+
+    <script src="Websites/Controller.js"></script>
+
+    <script src="Website/Controller.js"></script>
+</body>
+</html>

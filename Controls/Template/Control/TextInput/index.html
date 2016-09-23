@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+    <script src="App.js"></script>
+    <script src="Controller.js"></script>
+    <script src="TextInput.js"></script>
+    <script src="TextInputService.js"></script>
+
+    <style>
+        .className {
+            background-color:green;
+        }
+    </style>
+</head>
+<body ng-app="App" ng-controller="cnrl">
+    input text: {{txtInput}}
+    <text-input name="{{txtInputName}}" user-input="input text..." focus-id="input1" do-enter="Login"></text-input>
+
+</body>
+</html>
