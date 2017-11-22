@@ -1,0 +1,29 @@
+﻿[
+  
+  {
+    "value": 3,
+    "content": "radio-button-group name=\"{{NameOfGroup}}\" title=\"This is a title\" selected=\"value2\" items=\"arrayName\""
+  },
+  {
+    "value": 6,
+    "rowName":  "middleRow6",
+    "children": [
+      {
+        "value": 4,
+        "content": "flow-button name=\"{{buttonName}}\" text=\"Click me\" focus-id=\"button1\" do-enter=\"Login\""
+      },
+      {
+        "value": 4,
+        "content": ""
+      },
+      {
+        "value": 4,
+        "content": ""
+      }
+    ]
+  },
+  {
+    "value": 3,
+    "content": "my-widget2"
+  }
+]

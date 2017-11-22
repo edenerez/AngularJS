@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+    <script src="App.js"></script>
+
+    <script src="BroadcastService.js"></script>
+
+    <script src="Controller.js"></script>
+    <script src="Template.js"></script>
+    <script src="TemplateService.js"></script>
+
+    <script src="Control/Button/Button.js"></script>
+    <script src="Control/Button/ButtonService.js"></script>
+    <script src="Control/RadioButtonGroup/RadioButtonGroup.js"></script>
+    <script src="Control/RadioButtonGroup/RadioButtonGroupService.js"></script>
+    <script src="Control/TextInput/TextInput.js"></script>
+    <script src="Control/TextInput/TextInputService.js"></script>
+    <script src="Control/TextLabel/TextLabel.js"></script>
+    <script src="Control/TextLabel/TextLabelService.js"></script>
+
+
+
+
+
+
+    <style>
+        div {
+            border: 1px solid #ddd;
+           
+        }
+
+        div div {
+            border: 1px solid #f00;
+        }
+
+    </style>
+</head>
+<body ng-app="App" ng-controller="cnrl">
+    
+    <row name="{{templateName}}" collection='json'>
+    </row>
+    <br />
+    <br />
+    <br />
+
+    <row name="{{templateName2}}" collection='json2'>
+    </row>
+
+</body>
+</html>
