@@ -10,7 +10,9 @@ App.controller('cnrl', function ($scope, $http, TemplateService, ButtonService, 
     $http.get('json/file2.json').success(function (data) {
         $scope.json2 = data;
     });
-
+    $http.get('json/file12.json').success(function (data) {
+        $scope.json12 = data;
+    });
 });
 
 
